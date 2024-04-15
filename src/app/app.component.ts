@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
+import { BienvenidoComponent } from './components/bienvenido/bienvenido.component';
+import { LoginComponent } from './components/login/login.component';
+import { ErrorComponent } from './components/error/error.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule],
+  imports: [RouterOutlet, FormsModule, BienvenidoComponent, LoginComponent, ErrorComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -24,13 +27,15 @@ export class AppComponent implements OnInit{
   }
 
   calcular(a: number, b: number) {
-    this.promedio = (a+ b) / 2;
-    this.suma = a + b;
+    if (!isNaN(a) && !isNaN(b)) {
+        this.promedio = (a + b) / 2;
+        this.suma = a + b;
+      }
 }
 
   limpiar() {
-    this.edadUno = '';
-    this.edadDos = '';
+    this.edadUno = NaN;
+    this.edadDos = NaN;
     this.promedio = 0;
     this.suma = 0;
   }
@@ -40,12 +45,13 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     console.log('Arrancó el componente "app"');
   }
-
+  
+  /*
   ngAfterViewChecked(): void {
     console.log('checked');
   }
 
   ngOnDestroy(): void {
     console.log('destroy');
-  }
+  }*/
 }
