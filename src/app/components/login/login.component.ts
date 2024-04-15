@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Usuario } from '../../clases/usuario';
+import { Usuario } from '../../models/usuario';
 import { FormsModule } from '@angular/forms';
 
 @Component({
