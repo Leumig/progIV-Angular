@@ -44,15 +44,15 @@ body {
           transform: translate(-50%, -50%);
   font-size: 252px;
   font-weight: 900;
-  margin: 0px;
-  color: #585656;
+  margin-top: 15px;
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: -40px;
   margin-left: -20px;
 }
 
 .notfound .notfound-404 h1>span {
-  text-shadow: -8px 0px 0px #fff;
+  text-shadow: -8px 0px 0px #4e4747;
 }
 
 .notfound .notfound-404 h3 {
